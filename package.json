@@ -1,0 +1,34 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangwenyang/projects.git"
+  },
+  "keywords": [
+    "Next.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangwenyang/projects/issues"
+  },
+  "homepage": "https://github.com/jiangwenyang/projects#readme",
+  "dependencies": {
+    "next": "^9.1.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "@types/react": "^16.9.9",
+    "typescript": "^3.6.4"
+  }
+}
