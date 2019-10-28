@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout widthHeader={false} widthFooter={false}>
       <Head>
         <title>Home - JWY</title>
         <link rel="icon" href="/favicon.ico" />

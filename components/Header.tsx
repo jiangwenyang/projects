@@ -14,42 +14,37 @@ const links: LinkItem[] = [
   return link;
 });
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
+const Header = () => (
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
         </li>
-      ))}
-    </ul>
+        {links.map(({ key, href, label }) => (
+          <li key={key}>
+            <a href={href}>{label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
+      header {
+        box-sizing: border-box;
+        height: 50px;
       }
       nav {
+        height: 100%;
         background: #24292e;
         text-align: center;
       }
       ul {
         display: flex;
         justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-        color: 'red';
+        padding: 0 10px;
       }
       a {
         padding: 0 10px;
@@ -64,7 +59,7 @@ const Nav = () => (
         text-decoration: none;
       }
     `}</style>
-  </nav>
+  </header>
 );
 
-export default Nav;
+export default Header;
