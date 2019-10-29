@@ -1,0 +1,20 @@
+{
+  "/home": {
+    "buttons": [
+      {
+        "title": "Blog",
+        "href": "www.jiangwenyang.com",
+        "isExternalLink": true
+      },
+      {
+        "title": "Projects",
+        "href": "projects",
+        "isExternalLink": false
+      }
+    ]
+  },
+  "/projects": {
+    "title": "我写的一些小东西",
+    "description": ["不会撸猫的程序猿不是好猫奴。"]
+  }
+}

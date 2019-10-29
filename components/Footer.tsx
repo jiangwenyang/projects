@@ -9,10 +9,12 @@ const Footer: React.FC = () => {
           box-sizing: border-box;
           height: 50px;
           line-height: 50px;
-          padding: 10px 0;
           background: #24292e;
           text-align: center;
           color: #666;
+        }
+        p {
+          margin: 0;
         }
       `}</style>
     </footer>
