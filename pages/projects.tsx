@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Layout from '../components/Layout';
+import Stack from '../components/Stack';
 import projects from '../projects';
 
 import siteInfo from '../siteInfo.json';
@@ -11,6 +12,7 @@ import siteInfo from '../siteInfo.json';
 const Projects = () => {
   const router = useRouter();
   const pageInfo = siteInfo[router.pathname];
+
   return (
     <Layout widthHeader>
       <Head>
@@ -28,30 +30,34 @@ const Projects = () => {
         </div>
 
         <ul className="project-list">
-          {projects.map(project => (
-            <li key={project.id}>
-              <div className="card">
-                <img
-                  src={require(`../projects/${project.id}/cover.png`)}
-                  alt={project.title}
-                  className="card-img"
-                />
-                <div className="card-content">
-                  <h2>{project.title}</h2>
-                  <ul className="techStack-list">
-                    {project.stack.map(item => (
-                      <li className="techStack-item" key={item}>
-                        <a href="">{item}</a>
-                      </li>
-                    ))}
-                  </ul>
-                  <div>
-                    <ReactMarkdown source={project.content} />
+          {projects.map(project => {
+            let cover = '';
+            try {
+              cover = require(`../projects/${project.id}/cover.svg`);
+            } catch (error) {
+              cover = require(`../projects/${project.id}/cover.png`);
+            }
+            return (
+              <li key={project.id}>
+                <div className="card">
+                  <img src={cover} alt={project.title} className="card-img" />
+                  <div className="card-content">
+                    <h2 className="card-title">{project.title}</h2>
+                    <ul className="techStack-list">
+                      {project.stack.map(stackKey => (
+                        <li className="techStack-item" key={stackKey}>
+                          <Stack stackKey={stackKey} />
+                        </li>
+                      ))}
+                    </ul>
+                    <div>
+                      <ReactMarkdown source={project.content} />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <style jsx>{`
@@ -74,12 +80,19 @@ const Projects = () => {
           box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.33);
         }
         .card-img {
-          width: 200px;
-          height: 200px;
-          margin-right: 20px;
+          width: 20%;
+          min-width: 180px;
+          margin: 0 1em 0 0;
         }
         .card:hover {
           box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.33);
+        }
+        .techStack-list {
+          margin: 10px 0;
+        }
+        .techStack-item {
+          display: inline-block;
+          margin: 4px 0;
         }
       `}</style>
     </Layout>

@@ -1,0 +1,26 @@
+{
+  "nextjs": {
+    "name": "NEXT.js",
+    "url": "https://nextjs.org/"
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "url": "https://www.tslang.cn/"
+  },
+  "jquery": {
+    "name": "Jquery",
+    "url": "https://jquery.com/"
+  },
+  "bulma": {
+    "name": "Bulma",
+    "url": "https://bulma.io/"
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "url": "https://nodejs.org/"
+  },
+  "utools": {
+    "name": "uTools",
+    "url": "https://u.tools/"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "title": "pinyin-utools-plugin",
-  "stack": ["Nodejs", "Jquery", "Bulma", "uTools"],
+  "stack": ["nodejs", "jquery", "bulma", "utools"],
   "url": "https://github.com/jiangwenyang/pinyin-utools-plugin",
   "badges": {
     "github": "https://github.com/jiangwenyang/pinyin-utools-plugin"
