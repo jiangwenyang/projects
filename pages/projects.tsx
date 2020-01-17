@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import ReactMarkdown from "react-markdown";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import Layout from '../components/Layout';
-import Stack from '../components/Stack';
-import projects from '../projects';
+import Layout from "../components/Layout";
+import Stack from "../components/Stack";
+import projects from "../projects";
 
-import siteInfo from '../siteInfo.json';
+import siteInfo from "../siteInfo.json";
 
 const Projects = () => {
   const router = useRouter();
@@ -31,7 +30,7 @@ const Projects = () => {
 
         <ul className="project-list">
           {projects.map(project => {
-            let cover = '';
+            let cover = "";
             try {
               cover = require(`../projects/${project.id}/cover.svg`);
             } catch (error) {

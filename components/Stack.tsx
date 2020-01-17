@@ -1,5 +1,4 @@
-import React from 'react';
-import stacks from '../stacks/stacks.json';
+import stacks from "../stacks/stacks.json";
 
 interface StackItem {
   name: string;
