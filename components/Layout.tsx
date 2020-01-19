@@ -13,7 +13,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = props => {
   const { widthHeader, widthFooter, children } = props;
   return (
-    <div className="content-wrap">
+    <div className="flex flex-col w-screen h-screen">
       {widthHeader && <Header />}
       {children}
       {widthFooter && <Footer />}

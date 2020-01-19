@@ -1,0 +1,81 @@
+.main {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgb(26, 20, 74) 0%,
+      rgb(59, 52, 120) 100.2%
+    )
+    center center / cover no-repeat;
+}
+.wave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.wave:before,
+.wave:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  min-width: 300vw;
+  min-height: 300vw;
+  background-color: #fff;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+
+.wave:before {
+  bottom: 20vh;
+  border-radius: 45%;
+  animation-duration: 10s;
+}
+
+.wave:after {
+  bottom: 14vh;
+  opacity: 0.5;
+  border-radius: 47%;
+  animation-duration: 10s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+.entry {
+  @apply w-64 mx-6 cursor-pointer text-center;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.entry:hover {
+  transform: perspective(1px) scale(1.2);
+}
+
+.entry-bg {
+  @apply w-24 h-24 mx-auto;
+}
+
+.entry-content {
+  @apply mt-6;
+}
+
+.entry-title {
+  @apply text-xl text-gray-900 leading-tight;
+}
+
+.entry-description {
+  @apply text-base text-gray-600 leading-normal;
+}

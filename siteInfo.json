@@ -1,19 +1,17 @@
 {
-  "/home": {
-    "buttons": [
-      {
-        "title": "Blog",
-        "href": "www.jiangwenyang.com",
-        "isExternalLink": true
-      },
-      {
-        "title": "Projects",
-        "href": "projects",
-        "isExternalLink": false
-      }
-    ]
-  },
-  "/projects": {
+  "entry": [
+    {
+      "icon": "/img/blog.svg",
+      "title": "个人博客",
+      "description": "记录所思所学"
+    },
+    {
+      "icon": "/img/project.svg",
+      "title": "个人项目",
+      "description": "一些小东西"
+    }
+  ],
+  "projects": {
     "title": "我写的一些小东西",
     "description": ["不会撸猫的程序猿不是好猫奴。"]
   }
