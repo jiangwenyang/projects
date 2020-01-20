@@ -24,7 +24,9 @@ const Home: NextPage = () => {
         <section className="flex flex-row  justify-center items-center z-50">
           {renderEntrys()}
         </section>
-        <JinRiShiCi />
+        <section className="jinrishici invisible sm:visible">
+          <JinRiShiCi />
+        </section>
         <div className="wave"></div>
       </main>
     </Layout>

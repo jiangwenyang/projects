@@ -1,0 +1,30 @@
+.verses {
+  font-family: "FZXiJinLJW";
+  text-align: center;
+  opacity: 0.8;
+  word-break: keep-all;
+  writing-mode: vertical-lr;
+  text-align: left;
+}
+
+.verses-content {
+  font-size: 1.4em;
+  line-height: 1.35;
+}
+
+.verses-origin {
+  display: flex;
+  font-size: 1.2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.verses-author {
+  color: #fff;
+  background-color: #c20000;
+  border-radius: 3px;
+  padding: 3px 4px 3px 3px;
+  margin: 0.5em;
+  font-size: 67%;
+  letter-spacing: -1px;
+}

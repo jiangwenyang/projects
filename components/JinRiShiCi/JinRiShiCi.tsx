@@ -1,4 +1,6 @@
 import useSWR from "swr";
+import { load } from "../../utils/jinrishici";
+import "./index.css";
 interface JinriShiCi {
   data: {
     content: string;
@@ -13,17 +15,16 @@ const JinRiShiCi = () => {
     "jinrishici",
     () => {
       return new Promise((resolve, reject) => {
-        const jinrishici = require("jinrishici");
-        jinrishici.load(resolve, reject);
+        load(resolve, reject);
       });
     },
     {
       initialData: {
         data: {
-          content: "",
+          content: "红豆生南国，春来发几枝。",
           origin: {
-            title: "",
-            author: ""
+            author: "王维",
+            title: "相思"
           }
         }
       }
@@ -34,11 +35,11 @@ const JinRiShiCi = () => {
     origin: { title, author }
   } = (data as JinriShiCi).data;
   return (
-    <div>
-      <p>{content}</p>
-      <div>
-        <span>「{title}」</span>
-        <span>{author}</span>
+    <div className="verses">
+      <p className="verses-content">{content}</p>
+      <div className="verses-origin">
+        <span className="verses-title">「{title}」</span>
+        <span className="verses-author">{author}</span>
       </div>
     </div>
   );

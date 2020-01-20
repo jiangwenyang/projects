@@ -9,6 +9,12 @@
     )
     center center / cover no-repeat;
 }
+.jinrishici {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
 .wave {
   position: absolute;
   top: 0;
