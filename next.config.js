@@ -5,7 +5,7 @@ module.exports = withCSS({
   webpack: (config, options) => {
     config.module.rules.push(
       {
-        test: /\.(png|jpg|gif|svg|ttf)$/i,
+        test: /\.(png|jpg|gif|svg|eot|woff|woff2|ttf)$/i,
         use: [
           {
             loader: "url-loader",
