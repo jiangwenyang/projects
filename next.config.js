@@ -11,8 +11,6 @@ module.exports = withCSS({
             loader: "url-loader",
             options: {
               limit: 8192,
-              publicPath: "/img/",
-              outputPath: path.resolve(__dirname, "public", "img"),
               name: "[name].[hash:8].[ext]"
             }
           }
