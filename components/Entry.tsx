@@ -12,14 +12,14 @@ interface EntryProps {
 const Entry: React.FC<EntryProps> = ({ url, icon, title, description }) => {
   return (
     <Card className="entry">
-      <Link href={url || "/"}>
-        <>
+      <Link href={url || "#"}>
+        <a>
           <img src={icon} alt="blog" className="entry-bg" />
           <div className="entry-content">
             <h2 className="entry-title">{title}</h2>
             <p className="entry-description">{description}</p>
           </div>
-        </>
+        </a>
       </Link>
     </Card>
   );
