@@ -3,15 +3,16 @@ import Card from "./Card";
 import Link from "next/link";
 
 interface EntryProps {
+  url: string;
   icon: string;
   title: string;
   description: string;
 }
 
-const Entry: React.FC<EntryProps> = ({ icon, title, description }) => {
+const Entry: React.FC<EntryProps> = ({ url, icon, title, description }) => {
   return (
     <Card className="entry">
-      <Link href="/">
+      <Link href={url || "/"}>
         <>
           <img src={icon} alt="blog" className="entry-bg" />
           <div className="entry-content">

@@ -3,12 +3,14 @@
     {
       "icon": "/img/blog.svg",
       "title": "个人博客",
-      "description": "记录所思所学"
+      "description": "记录所思所学",
+      "url": "www.blog.jiangwenyang.com"
     },
     {
       "icon": "/img/project.svg",
       "title": "个人项目",
-      "description": "一些小东西"
+      "description": "一些小东西",
+      "url": "/projects"
     }
   ],
   "projects": {
