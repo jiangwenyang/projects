@@ -8,7 +8,8 @@ interface LinkItem {
 }
 
 const links: LinkItem[] = [
-  { href: "https://github.com/jiangwenyang", label: "GitHub" }
+  { href: "https://github.com/jiangwenyang", label: "GitHub" },
+  { href: "https://blog.jiangwenyang.com", label: "Blog" }
 ].map((link: LinkItem) => {
   link.key = `nav-link-${link.href}-${link.label}`;
   return link;

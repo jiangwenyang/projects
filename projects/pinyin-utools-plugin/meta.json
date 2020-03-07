@@ -1,8 +1,11 @@
 {
   "title": "pinyin-utools-plugin",
-  "stack": ["nodejs", "jquery", "bulma", "utools"],
+  "stacks": ["nodejs", "jquery", "bulma", "utools"],
   "url": "https://github.com/jiangwenyang/pinyin-utools-plugin",
-  "badges": {
-    "github": "https://github.com/jiangwenyang/pinyin-utools-plugin"
-  }
+  "badges": [
+    {
+      "type": "github",
+      "markdown": "[![GitHub stars](https://img.shields.io/github/stars/jiangwenyang/pinyin-utools-plugin)](https://github.com/jiangwenyang/pinyin-utools-plugin/stargazers)"
+    }
+  ]
 }

@@ -1,22 +1,23 @@
-const projects: string[] = ['pinyin-utools-plugin'];
+const projectKeys: string[] = ["pinyin-utools-plugin"];
 
-interface Badges {
-  github?: string;
+export interface Badge {
+  type: string;
+  markdown: string;
 }
 
-interface Project {
+export interface Project {
   id: string;
   title: string;
-  stack: string[];
+  stacks: string[];
   url: string;
-  badges: Badges;
+  badges: Badge[];
   content: string;
 }
 
-const projectsList: Project[] = projects.map(id => ({
+const projects: Project[] = projectKeys.map(id => ({
   id,
   ...require(`./${id}/meta.json`),
   content: require(`./${id}/README.md`).default
 }));
 
-export default projectsList;
+export default projects;
