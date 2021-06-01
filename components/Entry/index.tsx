@@ -1,6 +1,7 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../Card";
 import Link from "next/link";
+import styles from "./index.module.css";
 
 interface EntryProps {
   url: string;
@@ -11,13 +12,13 @@ interface EntryProps {
 
 const Entry: React.FC<EntryProps> = ({ url, icon, title, description }) => {
   return (
-    <Card className="entry">
+    <Card className={styles.entry}>
       <Link href={url || "#"}>
         <a>
-          <img src={icon} alt="blog" className="entry-bg" />
-          <div className="entry-content">
-            <h2 className="entry-title">{title}</h2>
-            <p className="entry-description">{description}</p>
+          <img src={icon} alt="blog" className={styles["entry-bg"]} />
+          <div className={styles["entry-content"]}>
+            <h2 className={styles["entry-title"]}>{title}</h2>
+            <p className={styles["entry-description"]}>{description}</p>
           </div>
         </a>
       </Link>

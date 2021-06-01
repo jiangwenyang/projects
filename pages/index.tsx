@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import "../styles/index.css";
+import styles from "../styles/index.module.css";
+import classnames from "classnames";
 import { Layout, Entry, JinRiShiCi } from "../components";
 import { entry } from "../siteInfo.json";
 
@@ -20,14 +21,16 @@ const Home: NextPage = () => {
           Code or Cat? This is a question...
         </h1>
       </header>
-      <main className="main mt-24">
+      <main className={classnames([styles.main, "mt-24"])}>
         <section className="flex flex-row  justify-center items-center z-50">
           {renderEntrys()}
         </section>
-        <section className="jinrishici invisible sm:visible">
+        <section
+          className={classnames([styles.jinrishici, "invisible", "sm:visible"])}
+        >
           <JinRiShiCi />
         </section>
-        <div className="wave"></div>
+        <div className={styles.wave}></div>
       </main>
     </Layout>
   );

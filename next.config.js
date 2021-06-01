@@ -1,7 +1,6 @@
 const path = require("path");
-const withCSS = require("@zeit/next-css");
 
-module.exports = withCSS({
+module.exports = {
   webpack: (config, options) => {
     config.module.rules.push(
       {
@@ -11,17 +10,17 @@ module.exports = withCSS({
             loader: "url-loader",
             options: {
               limit: 8192,
-              name: "[name].[hash:8].[ext]"
-            }
-          }
-        ]
+              name: "[name].[hash:8].[ext]",
+            },
+          },
+        ],
       },
       {
         test: /\.md$/,
-        use: "raw-loader"
+        use: "raw-loader",
       }
     );
 
     return config;
-  }
-});
+  },
+};

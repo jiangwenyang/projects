@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "deploy": "npm run build && npm run export",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
@@ -24,22 +26,42 @@
   },
   "homepage": "https://github.com/jiangwenyang/projects#readme",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "classnames": "^2.2.6",
-    "next": "^9.3.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-markdown": "^4.2.2",
-    "swr": "^0.1.16"
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-markdown": "^5.0.3",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "swr": "^0.5.3"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/node": "^12.11.5",
     "@types/react": "^16.9.9",
-    "postcss-preset-env": "^6.7.0",
+    "autoprefixer": "^10.2.6",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "postcss": "^8.3.0",
+    "prettier": "^2.3.0",
     "raw-loader": "^3.1.0",
-    "tailwindcss": "^1.1.4",
+    "stylelint": "^13.13.1",
+    "tailwindcss": "^2.1.2",
     "typescript": "^3.6.4",
     "url-loader": "^2.2.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

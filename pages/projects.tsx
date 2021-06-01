@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import "../styles/index.css";
+import styles from "../styles/projects.module.css";
 import { Layout, Project } from "../components";
 import projects from "../projects";
 import siteInfo from "../siteInfo.json";
@@ -18,7 +18,7 @@ const Projects: NextPage = () => {
         <p>{siteInfo.projects.description}</p>
       </header>
       <main>
-        {projects.map(project => (
+        {projects.map((project) => (
           <Project key={project.id} {...project} />
         ))}
       </main>
