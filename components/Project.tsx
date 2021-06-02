@@ -41,24 +41,19 @@ const Project: React.FC<ProjectProps> = (props) => {
   );
 
   return (
-    <article
-      className="flex gap-4  px-4 py-2 shadow-md sm:rounded-md group"
-      style={{
-        "--size": `${bgSize}px`,
-      }}
-    >
+    <article className="flex gap-4  px-4 py-2 shadow-md sm:rounded-md group">
       <div
         className="transition ease-in-out duration-300 transform relative group-hover:scale-105"
         style={{
-          width: "var(--size)",
-          height: "var(--size)",
+          width: `${bgSize}px`,
+          height: `${bgSize}px`,
         }}
       >
         <div
           style={{
             backgroundImage: `url(${cover})`,
-            width: "var(--size)",
-            height: "var(--size)",
+            width: `${bgSize}px`,
+            height: `${bgSize}px`,
           }}
           className="absolute rounded-md opacity-60 filter blur-xl transform scale-0 group-hover:scale-105 bg-no-repeat bg-center bg-contain"
         ></div>
