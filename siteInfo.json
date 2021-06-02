@@ -1,20 +1,34 @@
 {
   "entry": [
     {
-      "icon": "/img/blog.svg",
+      "icon": "/images/blog.svg",
       "title": "个人博客",
       "description": "记录所思所学",
       "url": "//www.blog.jiangwenyang.com"
     },
     {
-      "icon": "/img/project.svg",
+      "icon": "/images/project.svg",
       "title": "个人项目",
       "description": "一些小东西",
       "url": "/projects"
     }
   ],
+  "navs": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "Blog",
+      "url": "https://blog.jiangwenyang.com"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com/jiangwenyang"
+    }
+  ],
   "projects": {
-    "title": "我写的一些小东西",
-    "description": ["不会撸猫的程序猿不是好猫奴。"]
+    "title": "只写了一点小东西",
+    "description": ["不会撸猫的程序猿不是好猫奴"]
   }
 }

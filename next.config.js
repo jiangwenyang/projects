@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   webpack: (config, options) => {
     config.module.rules.push(
@@ -9,7 +7,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              limit: 8192,
+              limit: 100000,
               name: "[name].[hash:8].[ext]",
             },
           },

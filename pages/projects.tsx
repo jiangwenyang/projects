@@ -13,14 +13,16 @@ const Projects: NextPage = () => {
         <title>Projects - JWY</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <h1>{siteInfo.projects.title}</h1>
-        <p>{siteInfo.projects.description}</p>
+      <header className="py-10 bg-gradient-to-r from-green-400 to-blue-500 text-white text-center">
+        <h1 className="text-2xl leading-10">{siteInfo.projects.title}</h1>
+        <p className="text-sm mt-2">{siteInfo.projects.description}</p>
       </header>
-      <main>
-        {projects.map((project) => (
-          <Project key={project.id} {...project} />
-        ))}
+      <main className="flex-1 flex justify-center py-6">
+        <div className="w-full sm:w-2/3 mx-auto">
+          {projects.map((project) => (
+            <Project key={project.title} {...project} />
+          ))}
+        </div>
       </main>
     </Layout>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import stacks from "../stacks/stacks.json";
 
 interface StackItem {
@@ -10,40 +11,24 @@ interface StackProps {
   stackKey: string;
 }
 
-const Stack: React.FC<StackProps> = props => {
+const Stack: React.FC<StackProps> = (props) => {
   const { stackKey } = props;
   if (!stackKey) return null;
   const stack: StackItem = stacks[stackKey];
   if (!stack) return null;
   const { name, url, cover } = stack;
   return (
-    <a href={url}>
-      <img src={require(`../stacks/icons/${stackKey}.svg`)} alt="name" />
+    <a
+      href={url}
+      className="flex items-center text-sm gap-1 rounded p-1 hover:bg-gray-200 hover:text-white transition ease-in-out"
+    >
+      <Image
+        src={require(`../stacks/icons/${stackKey}.svg`).default}
+        alt="name"
+        width="20px"
+        height="20px"
+      />
       {name}
-      <style jsx>{`
-        a {
-          display: inline-block;
-          text-decoration: none;
-          padding: 5px 8px;
-          line-height: 1;
-          white-space: nowrap;
-          word-break: keep-all;
-          font-size: 14px;
-          border-radius: 3px;
-          color: inherit;
-          transition: background 0.3s;
-        }
-        a:hover {
-          background: #efefef;
-          text-decoration: none;
-        }
-        img {
-          max-width: 2em;
-          height: 1em;
-          vertical-align: bottom;
-          margin-right: 2px;
-        }
-      `}</style>
     </a>
   );
 };

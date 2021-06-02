@@ -1,26 +1,81 @@
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import Stack from "./Stack";
 import { Project as ProjectProps } from "../projects";
-import ReactMarkdown from "react-markdown";
 
-const Project: React.FC<ProjectProps> = props => {
-  const { title, stacks, url, content, badges } = props;
+const Project: React.FC<ProjectProps> = (props) => {
+  const { title, stacks, url, content, badges, cover } = props;
 
-  const StacksContent = stacks.map(stack => (
-    <Stack key={stack} stackKey={stack} />
-  ));
+  const bgSize = 120;
 
-  const BadgesContent = badges.map(badge => (
-    <ReactMarkdown key={badge.type} source={badge.markdown} />
-  ));
+  const BadgesContent = (
+    <ul className="flex gap-1 mt-2">
+      {badges.map((badge) => (
+        <li key={badge.type}>
+          <ReactMarkdown source={badge.markdown} />
+        </li>
+      ))}
+    </ul>
+  );
+
+  const titleContent = (
+    <h2 className="text-2xl text-gray-700 mb-2">
+      <a href={url} className="mr-2">
+        {title}
+      </a>
+    </h2>
+  );
+
+  const DescriptionContent = (
+    <ReactMarkdown source={content} className="py-2 text-gray-600" />
+  );
+
+  const StacksContent = (
+    <ul className="flex gap-2">
+      {stacks.map((stack) => (
+        <li key={stack}>
+          <Stack stackKey={stack} />
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
-    <article>
-      <h2>
-        <a href={url}>{title}</a>
-      </h2>
-      <ReactMarkdown source={content} />
-      {StacksContent}
-      {BadgesContent}
+    <article
+      className="flex gap-4  px-4 py-2 shadow-md sm:rounded-md group"
+      style={{
+        "--size": `${bgSize}px`,
+      }}
+    >
+      <div
+        className="transition ease-in-out duration-300 transform relative group-hover:scale-105"
+        style={{
+          width: "var(--size)",
+          height: "var(--size)",
+        }}
+      >
+        <div
+          style={{
+            backgroundImage: `url(${cover})`,
+            width: "var(--size)",
+            height: "var(--size)",
+          }}
+          className="absolute rounded-md opacity-60 filter blur-xl transform scale-0 group-hover:scale-105 bg-no-repeat bg-center bg-contain"
+        ></div>
+        <div className="absolute">
+          <Image src={cover} alt={title} width={bgSize} height={bgSize} />
+        </div>
+      </div>
+
+      <div className="flex-1">
+        {titleContent}
+
+        {StacksContent}
+
+        {BadgesContent}
+
+        {DescriptionContent}
+      </div>
     </article>
   );
 };

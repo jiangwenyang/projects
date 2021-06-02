@@ -5,7 +5,7 @@
   "badges": [
     {
       "type": "github",
-      "markdown": "[![GitHub stars](https://img.shields.io/github/stars/jiangwenyang/pinyin-utools-plugin)](https://github.com/jiangwenyang/pinyin-utools-plugin/stargazers)"
+      "markdown": "[![GitHub stars](https://img.shields.io/github/stars/jiangwenyang/pinyin-utools-plugin?style=social)](https://github.com/jiangwenyang/pinyin-utools-plugin)"
     }
   ]
 }
